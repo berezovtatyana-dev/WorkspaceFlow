@@ -128,7 +128,7 @@ export const ResourceDetail: React.FC = () => {
                         Подтвердить бронирование
                     </button>
                     {bookingMessage && (
-                        <div>{bookingMessage}</div>
+                        <div>{bookingMessage.text}</div>
                     )}
                 </div>
             </div>
