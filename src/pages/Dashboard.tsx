@@ -8,7 +8,6 @@ interface BookingRecord {
     time: string;
     date: string;
     status: 'Confirmed' | 'Cancelled';
-
 }
 
 export const Dashboard: React.FC = () => {
@@ -16,10 +15,43 @@ export const Dashboard: React.FC = () => {
     const userCtx = useContext(UserContext);
     if (!userCtx) throw new Error("UserContext не найден");
     const {user} = userCtx;
-    const [upcoming] = useState<BookingRecord[]
+    const [upcoming] = useState<BookingRecord[]>(()=>{
+        const saved: BookingRecord[] = JSON.parse(localStorage.getItem('user_bookings') || '[]');
+        return saved.filter(b=>b.status === 'Confirmed');
+    });
     return(
         <div>
-            Бронирование
+            <h1>Привет, {user.name.split(' ')[0]}</h1>
+            <div>
+                <div>
+                    <span>Ваш баланс:</span>
+                    <h3>Доступные часы0</h3>
+                </div>
+                <div>
+                    <span>{user.monthlyHourLimit-user.usedHours}</span>
+                    <span>{user.monthlyHourLimit}</span>
+                </div>
+            </div>
+            <div>
+                <h3>
+                    Ближайшие бронирования
+                </h3>
+                {upcoming.length === 0 ? (
+                    <div>У вас нет бронирований</div>
+                ):(
+                    <div>
+                        {upcoming.slice(-3).reverse().map((b)=>(
+                            <div key={b.id}>
+                                <h4>{b.resourceName}</h4>
+                                <p>{b.date}*{b.time}</p>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+            <button onClick={()=>navigate('/booking')}>
+                Забронировать
+            </button>
         </div>
     );
 };
