@@ -20,7 +20,7 @@ export const Dashboard: React.FC = () => {
         return saved.filter(b=>b.status === 'Confirmed');
     });
     return(
-        <div>
+        <div className='container'>
             <h1>Привет, {user.name.split(' ')[0]}</h1>
             <div>
                 <div>

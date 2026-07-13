@@ -29,7 +29,7 @@ export const Profile: React.FC = () => {
     };
     
     return(
-        <div>
+        <div className='container'>
             <div>
                 <div>
                     <h1>{user.name}</h1>
