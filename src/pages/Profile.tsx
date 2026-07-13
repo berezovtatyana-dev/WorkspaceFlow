@@ -1,8 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext, User } from "../context/UserContext";
-import { ResourceDetail } from "./ResourceDetail";
-import { mockResources } from "../mockData/mockData";
-import { bookingReducer, initialState, TimeSlot } from "../components/BookingReducer";
 
 interface BookingRecord {
     id: string;
