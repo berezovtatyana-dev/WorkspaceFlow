@@ -13,8 +13,8 @@ export const Booking: React.FC = () => {
         date: new Date().toISOString().split('T')[0],
         type: 'all' as 'all' |'desk' | 'room',
         floor: 'all' as 'all' | number,
-        hasFlipchart: false,
-        hasTypeC: false
+        hasTypeC: false,
+        hasFlipchart: false        
     });
 
     const {data: resources, loading, error} = useFetch<Resource>(

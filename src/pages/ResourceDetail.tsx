@@ -91,8 +91,8 @@ export const ResourceDetail: React.FC = () => {
                     <h3>Ваш лимит</h3>
                     <p>{user.department}</p>
                     <div>
-                        <span>{user.monthlyHoursLimit-user.usedHours}</span>
-                        <span>{user.monthlyHoursLimit}ч. </span>
+                        <span>{user.monthlyHourLimit-user.usedHours}</span>
+                        <span>{user.monthlyHourLimit}ч. </span>
                     </div>
                 </div>
                 <div>

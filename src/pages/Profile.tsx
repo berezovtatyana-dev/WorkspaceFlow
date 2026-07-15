@@ -70,8 +70,7 @@ export const Profile: React.FC = () => {
                                     <td>{b.status === 'Confirmed' ? 'Подтверждено' : 'Отменено'}</td>
                                     <td>
                                         {b.status === 'Confirmed' && (
-                                            <button
-                                        onClick={handleCancelBooking(b.id, b.hour)}
+                                            <button onClick={()=>handleCancelBooking(b.id, b.hour)}
                                         >
                                             Отменить
                                         </button>

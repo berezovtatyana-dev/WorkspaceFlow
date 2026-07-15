@@ -3,7 +3,7 @@ import { Resource } from "../mockData/mockData";
 
 interface ResourceCardProps {
     resource: Resource;
-    onSelectResource: (id: string)=> void;
+    onSelectResource: (id: string)=>void;
 }
 
 export const ResourceCard: React.FC<ResourceCardProps>=({resource, onSelectResource})=>{
@@ -25,9 +25,10 @@ export const ResourceCard: React.FC<ResourceCardProps>=({resource, onSelectResou
                     </div>
                 </div>
                 <ActionButton 
-                onAction={() => onSelectResource(resource)}
-                label="Посмотреть"/>
+                onAction={() => onSelectResource(resource.id)}
+                label="Посмотреть расписание"
+                />
             </div>
         </div>
-    )
-}
+    );
+};

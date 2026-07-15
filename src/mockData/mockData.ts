@@ -27,6 +27,6 @@ export const mockResources: Resource[] = [
         name: index % 2 === 0 ? `Hot Desk B-${index}` : `Гамма-${index}`,
         type: index % 2 ===0 ? ('desk' as const) : ('room' as const),
         floor: (index % 3)+1,
-        features: index % 3 === 0 ? ['Type-C монитор', 'Флипчарт'] : ['Флипчарт', 'Маркерная доска']
+        features: index % 3 === 0 ? ['Type-C монитор', 'Проектор'] : ['Флипчарт', 'Маркерная доска']
     }))
 ]
