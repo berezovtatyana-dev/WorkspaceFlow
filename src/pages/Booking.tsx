@@ -29,7 +29,7 @@ export const Booking: React.FC = () => {
             const matchesType = filters.type === 'all' || res.type === filters.type;
             const matchesFloor = filters.floor === 'all' || res.floor === filters.floor;
             const matchesFlipchart = !filters.hasFlipchart || res.features.includes('Флипчарт');
-            const matchesTypeC = !filters.hasTypeC || res.features.includes('Type-C Монитор');
+            const matchesTypeC = !filters.hasTypeC || res.features.includes('Type-C монитор');
             return matchesSearch && matchesType && matchesFloor && matchesFlipchart && matchesTypeC;
         });
     }, [resources, filters]);
